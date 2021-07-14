@@ -113,7 +113,7 @@ Use the getFlavorByIndex function below to do the following:
   2. Receive a number (the desired index)
   3. Return the flavor located at the received index position
 
-  
+
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
@@ -137,21 +137,21 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-// function removeFlavorByName(input_array,input_string){
-//   let result = [...input_array];
-//   for (let index =0; index < result.length; index++){
-//     if ( result[index]===input_string){
-//       //remove one item at specified index
-//       result.splice(index,1);
-//     }
-//   }
-//   return result;
-// }
-
 function removeFlavorByName(input_array,input_string){
-  //create a new array that does not contain these elements, which equal to input_string
-  return input_array.filter(element => String(element) !== (input_string))
+  let result = [...input_array];
+  for (let index =0; index < result.length; index++){
+    if ( result[index]===input_string){
+      //remove one item at specified index
+      result.splice(index,1);
+    }
+  }
+  return result;
 }
+
+// function removeFlavorByName(input_array,input_string){
+//   //create a new array that does not contain these elements, which equal to input_string
+//   return input_array.filter(element => String(element) !== (input_string))
+// }
 
 //return input_array.filter(element => String(element).includes(input_string))
 
@@ -177,19 +177,26 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-// function filterByWord(input_array, input_string){
+function filterByWord(input_array, input_string){
+let result = [];
+  for (let index =0; index < input_array.length; index++){
+    if ( String(input_array[index]).includes(input_string)){
+      result.push(input_array[index]);
+    }
+  }
+  return  result;
+}
 
+// function filterByWord(input_array, input_string){
 //   const filterItems = (input_array, input_string) => {
 //     return input_array.filter(element => String(element).includes(input_string))
 //   }
-  
 //   return filterItems(input_array,input_string);
-
 // }
 
-function filterByWord(input_array, input_string){
-  return input_array.filter(element => String(element).includes(input_string))
-}
+// function filterByWord(input_array, input_string){
+//   return input_array.filter(element => String(element).includes(input_string))
+// }
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
