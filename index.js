@@ -113,6 +113,7 @@ Use the getFlavorByIndex function below to do the following:
   2. Receive a number (the desired index)
   3. Return the flavor located at the received index position
 
+  
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
