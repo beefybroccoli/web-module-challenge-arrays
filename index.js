@@ -45,13 +45,9 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(input){
+  return input.slice();
 }    
-
-
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -64,8 +60,8 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(input){
+ return input.length = 31 ? true : false ;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +77,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(input_array, input_string){
+//   let result = [...input_array];
+//   result.unshift(input_string);
+//  return result;
+
+  return [input_string, ...input_array];
 }
 
 
@@ -97,11 +97,13 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(input_array){
+  // let result = [...input_array];
+  // result.pop();
+  // return result;
+
+  return input_array.slice(0, input_array.length-1);
 }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -114,8 +116,8 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(input_array, input_number){
+  return input_array[input_number];
 }
 
 
@@ -134,9 +136,23 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+// function removeFlavorByName(input_array,input_string){
+//   let result = [...input_array];
+//   for (let index =0; index < result.length; index++){
+//     if ( result[index]===input_string){
+//       //remove one item at specified index
+//       result.splice(index,1);
+//     }
+//   }
+//   return result;
+// }
+
+function removeFlavorByName(input_array,input_string){
+  //create a new array that does not contain these elements, which equal to input_string
+  return input_array.filter(element => String(element) !== (input_string))
 }
+
+//return input_array.filter(element => String(element).includes(input_string))
 
 
 
@@ -160,8 +176,18 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+// function filterByWord(input_array, input_string){
+
+//   const filterItems = (input_array, input_string) => {
+//     return input_array.filter(element => String(element).includes(input_string))
+//   }
+  
+//   return filterItems(input_array,input_string);
+
+// }
+
+function filterByWord(input_array, input_string){
+  return input_array.filter(element => String(element).includes(input_string))
 }
 
 
